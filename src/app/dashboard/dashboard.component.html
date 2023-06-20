@@ -1,0 +1,24 @@
+<div>
+    <h2>{{dashboradTitle}}</h2>
+</div>
+
+
+<div class="search-box">
+    <input type="text" placeholder="Search Movie" [(ngModel)] = "searchText" />
+    <button (click) = "search()" type = button>Go</button>
+    <button (click) = "reset()" type = button>Reset</button>
+</div>
+
+
+<div class="row mainDiv">
+    <div class="col-lg-3 m-3 pb-4 me-5" *ngFor="let movie of movies">
+        <img class="img" src="../../assets/{{movie.movieTitle}}.jpg" alt={{movie.movieTitle}}>
+        <div class="card-content">
+           <img src="../../assets/rating.jpg" alt={{movie.rating}} class="rating"/><span>{{movie.rating}}</span><br>
+           <!-- Write for other movie properties --> 
+           <span>{{movie.movieTitle | titlecase }}</span>
+           <span>{{movie.genre}}</span> <span>{{movie.yearOfRelease}}</span>           
+         </div>
+     </div>
+</div>
+
